@@ -1,16 +1,16 @@
-# This is a sample Python script.
+from Perceptron import Perceptron
+from Layer import Layer
+import numpy as np
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def test():
+    # layer1 = Layer(1,4)
+    # print(layer1.W)
+    X = np.array([[1]])
+    # forwarded = layer1.forward(X)
+    # print(X)
+    # print(layer1.a)
+    p = Perceptron([1,4,4,1])
+    print(p.forward(X))
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    test()
