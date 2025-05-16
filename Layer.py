@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class Layer:
     def __init__(self, in_size, layer_size):
         self.W = np.random.randn(layer_size, in_size).astype(np.float32)
@@ -8,13 +9,11 @@ class Layer:
         self.a = None
         self.X = None
 
-
     def forward(self, X):
         self.X = X
         self.z = self.W @ X + self.b
         self.a = np.tanh(self.z)
         return self.a
-
 
     def backward(self, dA, gamma):
         dL_dZ = dA * activation_derivative(self.z)
@@ -28,5 +27,6 @@ class Layer:
 
         return dA_prev
 
+
 def activation_derivative(z):
-    return 1 - np.tanh(z)**2
+    return 1 - np.tanh(z) ** 2
